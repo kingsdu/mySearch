@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.mySearch.domain">
+	<class name="News" table="s_news">
+		<id name="newsId" type="java.lang.Integer">
+			<generator class="native" />
+		</id>
+		<property name="newsTitle" />
+		<property name="sourceUrl" />
+		<property name="filePath" />
+		<property name="newsTime" />
+		<property name="sourceNet" />
+		<property name="createTime" />
+		<property name="mark" />
+		<property name="content" />
+		<property name="module"/>
+		
+		<many-to-one name="createBy" column="userId" lazy="false"/>
+		
+		<many-to-one name="column" column="columnId" lazy="false"/>
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.mySearch.domain">
+	<class name="Index" table="s_index">
+		<id name="indexId" type="java.lang.Integer">
+			<generator class="native" />
+		</id>
+		<property name="businessId" />
+		<property name="indexName" />
+		<property name="indexTime" />
+		<property name="indexPath" />
+		<property name="sourcePath" />
+		<property name="type" />
+		<property name="action" />
+		<property name="status" />
+		<property name="sqlSentence" />
+		<property name="createTime" />
+		<property name="mark" />
+		
+		<many-to-one name="createBy" column="userId" />
+		
+		<set name="columns" inverse="false" cascade="save-update" table="s_index_column">
+			<key column="indexId"></key>
+			<many-to-many class="Column" column="columnId"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

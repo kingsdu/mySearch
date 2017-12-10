@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.mySearch.domain">
+	<class name="User" table="s_user">
+		<id name="userId" type="java.lang.Integer">
+			<generator class="native" />
+		</id>
+		<property name="userName" />
+		<property name="password" />
+	</class>
+</hibernate-mapping>

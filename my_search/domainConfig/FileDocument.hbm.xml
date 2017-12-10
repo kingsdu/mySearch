@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.mySearch.domain">
+	<class name="FileDocument" table="s_filedocument">
+		<id name="fdId" type="java.lang.Integer">
+			<generator class="native" />
+		</id>
+		<property name="fdName" />
+		<property name="swfName" />
+		<property name="status" />
+		<property name="createTime" />
+		<property name="mark" />
+		
+		<many-to-one name="createBy" column="userId" lazy="false"/>
+	</class>
+</hibernate-mapping>

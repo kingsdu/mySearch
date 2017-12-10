@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="struts2" extends="struts-default">
+
+		<action name="UserAction_*" method="{1}"
+			class="com.mySearch.action.UserAction">
+			<result name="success">/ok.jsp</result>
+			<result name="input">/error.jsp</result>
+		</action>
+
+		<action name="IndexAction_*" method="{1}" class="indexAction">
+			<result name="addIndex">/manager/main.jsp?type=addIndex</result>
+			<result name="viewIndex">/manager/viewIndex.jsp</result>
+			<result name="createIndex" type="redirect">/IndexAction_viewIndex.action
+			</result>
+			<result name="doQuery">/index.jsp</result>
+		</action>
+
+		<action name="ColumnAction_*" method="{1}" class="columnAction">
+			<result name="getAllColumn">/manager/addColumn.jsp</result>
+			<result name="addColumn">/manager/main.jsp?type=addColumn</result>
+			<result name="searchAllColumnPa">/manager/viewColumn.jsp</result>
+		</action>
+
+		<action name="NewsAction_*" method="{1}" class="newsAction">
+			<result name="getAllColumn">/manager/addNews.jsp</result>
+			<result name="addNews">/manager/main.jsp?type=addNews</result>
+			<result name="searchAllNewsPa">/manager/viewNews.jsp</result>
+			<result name="delNews">/manager/main.jsp?type=delNews</result>
+		</action>
+		
+	    <action name="FileDocumentAction_*" method="{1}" class="fileDocumentAction">
+            <result name="upload">/manager/main.jsp?type=addLocal</result>
+            <result name="searchAllFileDocumentPa">/manager/addLocal.jsp</result>
+            <result name="delFileDocument">/manager/main.jsp?type=delFileDocument</result>
+            <result name="doQuery">/searchFile.jsp</result>
+            <result name="viewSwf">/documentView.jsp</result>
+        </action>
+        
+        <action name="CrawlAction_*" method="{1}" class="CrawlAction">
+            <result name="getAllWebinfo">/manager/addCrawl.jsp</result>
+            <result name="searchAllwebinfoPa">/manager/viewCrawl.jsp</result>  
+            <result name="addWebInfo">/manager/main.jsp?type=addWebInfo</result>  
+            <result name="deleteInfo">/manager/main.jsp?type=addWebInfo</result>
+            <result name="crawlOver">/manager/main.jsp?type=addWebInfo</result>    
+        </action>
+        
+	</package>
+
+</struts>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.mySearch.domain">
+	<class name="Column" table="s_column">
+		<id name="columnId" type="java.lang.Integer">
+			<generator class="native" />
+		</id>
+		<property name="parentId" />
+		<property name="columnName" />
+		<property name="createTime" />
+		<property name="mark" />
+
+		<many-to-one name="createBy" column="userId" lazy="false" />
+
+		<set name="indexs" inverse="false" lazy="false" cascade="save-update"
+			table="s_index_column">
+			<key column="columnId"></key>
+			<many-to-many class="Index" column="indexId"></many-to-many>
+		</set>
+
+		<set name="news" inverse="false" lazy="false" cascade="save-update">
+			<key column="columnId"></key>
+			<one-to-many class="News"></one-to-many>
+		</set>
+		
+		<set name="webinfo" inverse="false" lazy="false" cascade="save-update">
+			<key column="columnId"></key>
+			<one-to-many class="WebInfo"></one-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

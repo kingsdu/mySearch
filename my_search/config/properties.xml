@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commonProperty id="0" name=""> 
+   <urlName id="1" name=""></urlName>
+   <tomcatPath id="2" name=""></tomcatPath>
+   <sheduleTag id="3" name=""></sheduleTag>
+   <recoverGZ1 id="4" name=""></recoverGZ1>
+   <recoverGZ2 id="5" name=""></recoverGZ2>
+   <httpHead id="6" name=""></httpHead>
+</commonProperty>
+

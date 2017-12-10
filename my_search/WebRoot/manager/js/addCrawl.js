@@ -1,0 +1,3 @@
+function addCate(){
+	$("#addInput").show();
+}

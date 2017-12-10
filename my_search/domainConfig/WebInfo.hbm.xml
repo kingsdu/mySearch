@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.mySearch.domain">
+	<class name="WebInfo" table="s_webinfo">
+		<id name="webId" type="java.lang.Integer">
+			<generator class="native" />
+		</id>
+		<property name="webName" />
+		<property name="webUrl" />
+		<property name="crawlURL" />
+		<property name="createTime" />
+		<property name="preCrawlTime" />
+		<property name="resultUrl" />
+		<property name="mark" />
+        <property name="isIKDic" />
+        
+		<many-to-one name="createBy" column="userId" lazy="false" />
+
+        <many-to-one name="column" column="columnId" lazy="false"/>
+	</class>
+</hibernate-mapping>
